@@ -1,2 +1,2 @@
 # TheVibeSVR
-extracao de audio ou video de videos 
+download de videos e conversao para mp3/mp4
