@@ -7,8 +7,6 @@ def inicio():
     status.set("Baixando...")
     mp3Status=star(playlistUrl.get(), downloadPath.get(),valor_radio.get())
     status.set(mp3Status)
-####teoricamente era pra alterar o status para exibir uma mensagem
-
 valor_radio=StringVar()
 playlistUrl=StringVar()
 downloadPath=StringVar()
