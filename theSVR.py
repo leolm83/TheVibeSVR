@@ -41,6 +41,7 @@ b_download.place(x=400, y=500)
 l_radio = Label(app, text='Qual o Formato?')
 r_mp3= Radiobutton(app, text='mp3',
        variable = valor_radio, value="mp3")
+r_mp3.select()
 r_mp4 = Radiobutton(app, text='mp4',
        variable = valor_radio, value="mp4")
 l_radio.place(x=400,y=420)
