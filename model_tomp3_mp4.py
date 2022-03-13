@@ -19,9 +19,10 @@ def toMp3(youtubeVideo,caminho,url,nomeArquivo):
                 videoclip.close()
                 os.remove(caminho+nomeArquivo+".mp4")
 def toMp4(youtubeVideo,caminho,url,nomeArquivo):
-            if (not(os.path.exists(caminho+nomeArquivo+".mp3"))):
+            if (not(os.path.exists(caminho+nomeArquivo+".mp4"))):
                 print(f'Downloading video: {playlist_url}')
-                video=youtubeVideo.streams.filter(file_extension='mp4').first()
+                ##video=youtubeVideo.streams.filter(file_extension='mp4').first() 
+                video=youtubeVideo.streams.filter(file_extension='mp4',res="720p").first()
                 video.download(caminho)
 
 playlist_url=""
@@ -56,7 +57,7 @@ def star(playlistUrl,downloadPath,format):
               if(format=="mp3"):
                 toMp3(youtubeVideo,caminho,playlist_url,nomeArquivo)
               else:
-                toMp4(youtubeVideo, caminho, url, nomeArquivo)
+                toMp4(youtubeVideo, caminho,playlist_url, nomeArquivo)
       return "VIDEOS BAIXADOS COM SUCESSO!!!!"
     except KeyError:
       print("ISTO NAO É UMA PLAYLIST VALIDA")### o programa entra nessa excessao se nao for possivel obter uma playlist válida e tenta baixar um unico video
@@ -70,7 +71,7 @@ def star(playlistUrl,downloadPath,format):
             if(format=="mp3"):
                 toMp3(youtubeVideo,caminho,playlist_url,nomeArquivo)
             else:
-                toMp4(youtubeVideo, caminho, url, nomeArquivo)
+                toMp4(youtubeVideo, caminho, playlist_url, nomeArquivo)
             print("*******ALL VIDEOS DOWNLOADED********")
             return "VIDEO : "+nomeArquivo+ " BAIXADO COM SUCESSO!!!!" 
 def rule():
