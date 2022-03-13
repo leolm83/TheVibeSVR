@@ -27,7 +27,7 @@ def toMp4(youtubeVideo,caminho,url,nomeArquivo):
 
 playlist_url=""
 caminho=""
-def star(playlistUrl,downloadPath,format):
+def star(playlistUrl,downloadPath,format,status):
     ###playlist_url = "https://www.youtube.com/watch?v=3WG0T2RU6tQ&list=RD3WG0T2RU6tQ&start_radio=1&t=1&ab_channel=CatDealers"
     caminho ="D:\\THE VIBE\\"
     playlist_url=playlistUrl
@@ -54,6 +54,7 @@ def star(playlistUrl,downloadPath,format):
           except VideoUnavailable:
            print(f'O video {url} está indisponivel e esta sendo ignorado.')
           else:
+              status.set("No momento : "+nomeArquivo)
               if(format=="mp3"):
                 toMp3(youtubeVideo,caminho,playlist_url,nomeArquivo)
               else:
