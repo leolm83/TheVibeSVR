@@ -5,7 +5,7 @@ app=Tk()
 status=StringVar()
 def inicio():
     status.set("Baixando...")
-    mp3Status=star(playlistUrl.get(), downloadPath.get(),valor_radio.get())
+    mp3Status=star(playlistUrl.get(), downloadPath.get(),valor_radio.get(),status)
     status.set(mp3Status)
 ####teoricamente era pra alterar o status para exibir uma mensagem
 
